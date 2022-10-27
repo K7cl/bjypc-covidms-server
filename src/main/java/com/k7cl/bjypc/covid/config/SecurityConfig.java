@@ -15,9 +15,10 @@ public class SecurityConfig {
             .csrf().disable()
             .authorizeHttpRequests((authz) -> authz
                             .antMatchers(HttpMethod.POST, "/login").permitAll()
-                            .antMatchers(HttpMethod.GET, "/swagger-ui/*").permitAll()
-                            .antMatchers(HttpMethod.GET, "/v3/*").permitAll()
-                            .antMatchers(HttpMethod.GET, "/v3/api-docs/*").permitAll()
+                            .antMatchers(HttpMethod.OPTIONS, "/login").permitAll()
+//                            .antMatchers(HttpMethod.GET, "/swagger-ui/*").permitAll()
+//                            .antMatchers(HttpMethod.GET, "/v3/*").permitAll()
+//                            .antMatchers(HttpMethod.GET, "/v3/api-docs/*").permitAll()
                             .anyRequest().authenticated()
 //                            .anyRequest().permitAll()
             );

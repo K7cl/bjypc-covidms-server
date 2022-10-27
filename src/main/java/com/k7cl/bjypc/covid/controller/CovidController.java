@@ -6,6 +6,7 @@ import com.k7cl.bjypc.covid.entity.Response;
 import com.k7cl.bjypc.covid.entity.StatusRes;
 import com.k7cl.bjypc.covid.service.impl.HealthCheckService;
 import com.k7cl.bjypc.covid.service.impl.UserService;
+import com.k7cl.bjypc.covid.utils.CovidUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,8 @@ public class CovidController {
     UserService userService;
     @Autowired
     HealthCheckService healthCheckService;
+
+    CovidUtil covidUtil = new CovidUtil();
 
     @GetMapping("/status")
     public Object get() {
@@ -47,5 +50,13 @@ public class CovidController {
         }
     }
 
-
+    @GetMapping("/beijing")
+    public Object beijing() {
+        try {
+            return new Response(true, null, covidUtil.getData());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Response(false, e.getMessage(), null);
+        }
+    }
 }
