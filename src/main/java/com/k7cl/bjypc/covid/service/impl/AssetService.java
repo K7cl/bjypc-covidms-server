@@ -37,7 +37,7 @@ public class AssetService {
     }
 
     public boolean delete(int id) {
-        return assetRepository.deleteById(id);
+        return assetRepository.deleteById(id) == 1;
     }
 
     public Page<Asset> findAll(int page, int limit) {

@@ -34,7 +34,7 @@ public class ClassesService {
     }
 
     public boolean delete(int id) {
-        return classesRepository.deleteById(id);
+        return classesRepository.deleteById(id) == 1;
     }
 
     public Page<Classes> findAll(int page, int limit) {

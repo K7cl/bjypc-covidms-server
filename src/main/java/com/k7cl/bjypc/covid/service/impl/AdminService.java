@@ -18,7 +18,7 @@ public class AdminService {
     }
 
     public boolean delete(String userName) {
-        return adminRepository.deleteByUserName(userName);
+        return adminRepository.deleteByUserName(userName) == 1;
     }
 
     public void save(Admin u) {

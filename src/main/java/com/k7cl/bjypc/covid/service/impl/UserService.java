@@ -60,7 +60,7 @@ public class UserService {
     }
 
     public boolean delete(String sid) {
-        return userRepository.deleteByStudentId(sid);
+        return userRepository.deleteByStudentId(sid) == 1;
     }
 
     public void save(User u) {
