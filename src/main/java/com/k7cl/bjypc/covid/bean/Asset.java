@@ -2,7 +2,6 @@ package com.k7cl.bjypc.covid.bean;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity

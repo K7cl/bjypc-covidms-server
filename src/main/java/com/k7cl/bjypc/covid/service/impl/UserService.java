@@ -1,6 +1,5 @@
 package com.k7cl.bjypc.covid.service.impl;
 
-import com.k7cl.bjypc.covid.bean.Asset;
 import com.k7cl.bjypc.covid.bean.Classes;
 import com.k7cl.bjypc.covid.bean.User;
 import com.k7cl.bjypc.covid.service.UserRepository;
@@ -9,10 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 @Service

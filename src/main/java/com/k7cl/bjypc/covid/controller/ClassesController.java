@@ -1,17 +1,13 @@
 package com.k7cl.bjypc.covid.controller;
 
 import com.k7cl.bjypc.covid.bean.Classes;
-import com.k7cl.bjypc.covid.bean.User;
 import com.k7cl.bjypc.covid.entity.ClassEdit;
 import com.k7cl.bjypc.covid.entity.Response;
-import com.k7cl.bjypc.covid.entity.UserEdit;
 import com.k7cl.bjypc.covid.service.impl.ClassesService;
 import com.k7cl.bjypc.covid.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.WebRequest;
-
 import java.util.Objects;
 
 @RestController
@@ -32,7 +28,7 @@ public class ClassesController {
     }
 
     @InitBinder
-    public void initBinder(WebDataBinder binder, WebRequest request){
+    public void initBinder(WebDataBinder binder){
         binder.setDisallowedFields("id", "admin");
     }
 

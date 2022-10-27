@@ -1,19 +1,13 @@
 package com.k7cl.bjypc.covid.controller;
 
 import com.k7cl.bjypc.covid.bean.HealthCheck;
-import com.k7cl.bjypc.covid.bean.User;
 import com.k7cl.bjypc.covid.entity.HealthCheckEdit;
 import com.k7cl.bjypc.covid.entity.Response;
-import com.k7cl.bjypc.covid.entity.UserEdit;
-import com.k7cl.bjypc.covid.service.impl.ClassesService;
 import com.k7cl.bjypc.covid.service.impl.HealthCheckService;
 import com.k7cl.bjypc.covid.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.WebRequest;
-
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/healthCheck")
@@ -26,7 +20,7 @@ public class HealthCheckController {
 
 
     @InitBinder
-    public void initBinder(WebDataBinder binder, WebRequest request){
+    public void initBinder(WebDataBinder binder){
         binder.setDisallowedFields("id", "user");
     }
 
@@ -45,15 +39,5 @@ public class HealthCheckController {
             return new Response(false, e.getMessage(), null);
         }
     }
-
-//    @GetMapping("/test")
-//    public Object test() {
-//        try {
-//            return new Response(true, null, healthCheckService.findUsersLatest());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return new Response(false, e.getMessage(), null);
-//        }
-//    }
 
 }
