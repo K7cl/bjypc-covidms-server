@@ -2,6 +2,7 @@ package com.k7cl.bjypc.covid.bean;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -17,6 +18,20 @@ public class User implements Serializable {
     private Classes classes;
     private String identity;
     private String phone;
+    @OneToMany(mappedBy = "admin")
+    private List<Asset> assetList;
+    @OneToMany(mappedBy = "admin")
+    private List<Classes> classesList;
+
+    @PreRemove
+    private void preRemove() {
+        for (Asset s : assetList) {
+            s.setAdmin(null);
+        }
+        for (Classes s : classesList) {
+            s.setAdmin(null);
+        }
+    }
 
     public Classes getClasses() {
         return classes;

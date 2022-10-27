@@ -22,8 +22,8 @@ public class SecurityConfig {
 //                        .antMatchers(HttpMethod.GET, "/swagger-ui/*").permitAll()
 //                        .antMatchers(HttpMethod.GET, "/v3/*").permitAll()
 //                        .antMatchers(HttpMethod.GET, "/v3/api-docs/*").permitAll()
-                        .anyRequest().authenticated()
-//                            .anyRequest().permitAll()
+//                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 );
         return http.build();
     }
