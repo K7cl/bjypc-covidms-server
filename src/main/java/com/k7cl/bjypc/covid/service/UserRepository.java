@@ -13,10 +13,12 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByPhone(String phone);
     User findByStudentId(String sid);
     List<User> findByNameContaining(String name);
+    User findById(int id);
 
     List<User> findByNameContainingAndStudentIdContainingAndClassesAndIdentityContaining(String name, String sid, Classes classes, String ident);
     List<User> findByNameContainingAndStudentIdContainingAndIdentityContaining(String name, String sid, String ident);
     boolean existsByStudentId(String sid);
+    boolean existsById(int id);
     @Transactional
     int deleteByStudentId(String sid);
 }

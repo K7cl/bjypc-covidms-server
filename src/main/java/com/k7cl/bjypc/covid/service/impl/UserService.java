@@ -28,7 +28,12 @@ public class UserService {
     public List<User> findByName(String name) {
         return userRepository.findByNameContaining(name);
     }
-
+    public User findById(int id) {
+        return userRepository.findById(id);
+    }
+    public boolean isExistsById(int id) {
+        return userRepository.existsById(id);
+    }
     public boolean isExists(String sid) {
         return userRepository.existsByStudentId(sid);
     }

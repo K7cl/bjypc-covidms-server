@@ -9,7 +9,6 @@ import com.k7cl.bjypc.covid.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.WebRequest;
 import java.sql.Timestamp;
 
 @RestController
@@ -100,6 +99,19 @@ public class AssetController {
             }
             buildEntity(reqAsset, assetService.findById(reqAsset.aid()));
             return new Response(true, null, assetService.findById(reqAsset.aid()));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Response(false, e.getMessage(), null);
+        }
+    }
+
+    @GetMapping("/{id}")
+    public Object getOne(@PathVariable String id) {
+        try {
+            if (!assetService.isExists(Integer.parseInt(id))) {
+                return new Response(false, "User not exist!", null);
+            }
+            return new Response(true, null, assetService.findById(Integer.parseInt(id)));
         } catch (Exception e) {
             e.printStackTrace();
             return new Response(false, e.getMessage(), null);

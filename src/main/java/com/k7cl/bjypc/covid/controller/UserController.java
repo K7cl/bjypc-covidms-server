@@ -11,8 +11,6 @@ import com.k7cl.bjypc.covid.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.WebRequest;
-
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -106,7 +104,7 @@ public class UserController {
     }
 
     @InitBinder
-    public void initBinder(WebDataBinder binder, WebRequest request){
+    public void initBinder(WebDataBinder binder){
         binder.setDisallowedFields("id", "classes");
     }
 
@@ -145,6 +143,19 @@ public class UserController {
             }
             buildEntity(reqUser, userService.findByStudentId(sid));
             return new Response(true, null, userService.findByStudentId(reqUser.studentId()));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Response(false, e.getMessage(), null);
+        }
+    }
+
+    @GetMapping("/{id}")
+    public Object getOne(@PathVariable String id) {
+        try {
+            if (!userService.isExistsById(Integer.parseInt(id))) {
+                return new Response(false, "User not exist!", null);
+            }
+            return new Response(true, null, userService.findById(Integer.parseInt(id)));
         } catch (Exception e) {
             e.printStackTrace();
             return new Response(false, e.getMessage(), null);

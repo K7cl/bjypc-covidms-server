@@ -12,16 +12,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .csrf().disable()
-            .authorizeHttpRequests((authz) -> authz
-                            .antMatchers(HttpMethod.POST, "/login").permitAll()
-                            .antMatchers(HttpMethod.OPTIONS, "/login").permitAll()
-//                            .antMatchers(HttpMethod.GET, "/swagger-ui/*").permitAll()
-//                            .antMatchers(HttpMethod.GET, "/v3/*").permitAll()
-//                            .antMatchers(HttpMethod.GET, "/v3/api-docs/*").permitAll()
-                            .anyRequest().authenticated()
+                .csrf().disable()
+                .cors().disable()
+                .authorizeHttpRequests((authz) -> authz
+                        .antMatchers(HttpMethod.POST, "/login").permitAll()
+                        .antMatchers(HttpMethod.OPTIONS, "/login").permitAll()
+//                        .antMatchers(HttpMethod.GET, "/swagger-ui/*").permitAll()
+//                        .antMatchers(HttpMethod.GET, "/v3/*").permitAll()
+//                        .antMatchers(HttpMethod.GET, "/v3/api-docs/*").permitAll()
+                        .anyRequest().authenticated()
 //                            .anyRequest().permitAll()
-            );
+                );
         return http.build();
     }
 }

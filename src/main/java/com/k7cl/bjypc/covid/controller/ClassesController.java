@@ -66,6 +66,19 @@ public class ClassesController {
         }
     }
 
+    @GetMapping("/{id}")
+    public Object getOne(@PathVariable String id) {
+        try {
+            if (!classesService.isExists(Integer.parseInt(id))) {
+                return new Response(false, "User not exist!", null);
+            }
+            return new Response(true, null, classesService.findById(Integer.parseInt(id)));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Response(false, e.getMessage(), null);
+        }
+    }
+
     private void buildEntity(@RequestBody ClassEdit reqClass, Classes classes) {
         classes.setName(reqClass.name());
         classes.setAdmin(userService.findByStudentId(reqClass.sid()));
