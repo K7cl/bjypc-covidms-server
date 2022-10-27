@@ -1,9 +1,7 @@
 package com.k7cl.bjypc.covid.controller;
 
 import com.k7cl.bjypc.covid.bean.Asset;
-import com.k7cl.bjypc.covid.bean.Classes;
 import com.k7cl.bjypc.covid.entity.AssetEdit;
-import com.k7cl.bjypc.covid.entity.ClassEdit;
 import com.k7cl.bjypc.covid.entity.Response;
 import com.k7cl.bjypc.covid.service.impl.AssetService;
 import com.k7cl.bjypc.covid.service.impl.ClassesService;
@@ -12,11 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
-
-import javax.xml.crypto.Data;
 import java.sql.Timestamp;
-import java.util.Date;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/asset")
@@ -43,7 +37,7 @@ public class AssetController {
     }
 
     @InitBinder
-    public void initBinder(WebDataBinder binder, WebRequest request){
+    public void initBinder(WebDataBinder binder){
         binder.setDisallowedFields("id", "admin", "classes");
     }
 
