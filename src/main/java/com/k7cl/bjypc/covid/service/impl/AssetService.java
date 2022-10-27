@@ -69,8 +69,15 @@ public class AssetService {
     }
 
     public List<Asset> searchAnd(Timestamp start, Timestamp stop, Classes classes, String name) {
-        if (classes == null)
+        if (classes == null) {
+            if(start == null && stop == null) {
+                return assetRepository.findByNameContaining(name);
+            }
             return assetRepository.findByImportTimeBetweenAndNameContaining(start, stop, name);
+        }
+        if(start == null && stop == null) {
+            return assetRepository.findByClassesAndNameContaining(classes, name);
+        }
         return assetRepository.findByImportTimeBetweenAndClassesAndNameContaining(start, stop, classes, name);
     }
 }

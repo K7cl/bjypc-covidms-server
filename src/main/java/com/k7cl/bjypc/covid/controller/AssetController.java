@@ -46,9 +46,15 @@ public class AssetController {
             if (cid != 0 && !classesService.isExists(cid)) {
                 return new Response(false, "Class not exist!", null);
             }
+            Timestamp startTs = null;
+            Timestamp endTs = null;
+            if (startTime != 0 || endTime != 0) {
+                startTs = new Timestamp(startTime);
+                endTs = new Timestamp(endTime);
+            }
             if (cid == 0)
-                return new Response(true, null, assetService.searchAnd(new Timestamp(startTime), new Timestamp(endTime), null, keyword));
-            return new Response(true, null, assetService.searchAnd(new Timestamp(startTime), new Timestamp(endTime), classesService.findById(cid), keyword));
+                return new Response(true, null, assetService.searchAnd(startTs, endTs, null, keyword));
+            return new Response(true, null, assetService.searchAnd(startTs, endTs, classesService.findById(cid), keyword));
         } catch (Exception e) {
             e.printStackTrace();
             return new Response(false, e.getMessage(), null);
