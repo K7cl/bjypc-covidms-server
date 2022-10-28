@@ -1,7 +1,7 @@
 package com.k7cl.bjypc.covid.service.impl;
 
-import com.k7cl.bjypc.covid.bean.HealthCheck;
-import com.k7cl.bjypc.covid.bean.User;
+import com.k7cl.bjypc.covid.entity.HealthCheck;
+import com.k7cl.bjypc.covid.entity.User;
 import com.k7cl.bjypc.covid.service.HealthCheckRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;

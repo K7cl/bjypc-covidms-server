@@ -1,9 +1,9 @@
 package com.k7cl.bjypc.covid.controller;
 
-import com.k7cl.bjypc.covid.bean.HealthCheck;
-import com.k7cl.bjypc.covid.bean.User;
-import com.k7cl.bjypc.covid.entity.Response;
-import com.k7cl.bjypc.covid.entity.StatusRes;
+import com.k7cl.bjypc.covid.entity.HealthCheck;
+import com.k7cl.bjypc.covid.entity.User;
+import com.k7cl.bjypc.covid.pojo.Response;
+import com.k7cl.bjypc.covid.pojo.StatusRes;
 import com.k7cl.bjypc.covid.service.impl.HealthCheckService;
 import com.k7cl.bjypc.covid.service.impl.UserService;
 import com.k7cl.bjypc.covid.utils.CovidUtil;

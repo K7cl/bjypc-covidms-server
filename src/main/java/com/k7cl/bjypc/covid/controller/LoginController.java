@@ -1,8 +1,8 @@
 package com.k7cl.bjypc.covid.controller;
 
-import com.k7cl.bjypc.covid.UserAuthenticationManager;
-import com.k7cl.bjypc.covid.entity.LoginBody;
-import com.k7cl.bjypc.covid.entity.Response;
+import com.k7cl.bjypc.covid.config.UserAuthenticationManager;
+import com.k7cl.bjypc.covid.pojo.LoginBody;
+import com.k7cl.bjypc.covid.pojo.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

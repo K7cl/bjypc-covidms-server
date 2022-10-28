@@ -1,4 +1,4 @@
-package com.k7cl.bjypc.covid.bean;
+package com.k7cl.bjypc.covid.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.OnDelete;

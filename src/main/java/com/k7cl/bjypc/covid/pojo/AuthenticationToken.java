@@ -1,6 +1,5 @@
-package com.k7cl.bjypc.covid;
+package com.k7cl.bjypc.covid.pojo;
 
-import com.k7cl.bjypc.covid.entity.SessionUser;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 
 public class AuthenticationToken extends AbstractAuthenticationToken {

@@ -1,6 +1,6 @@
 package com.k7cl.bjypc.covid.service.impl;
 
-import com.k7cl.bjypc.covid.bean.Admin;
+import com.k7cl.bjypc.covid.entity.Admin;
 import com.k7cl.bjypc.covid.service.AdminRepository;
 import com.k7cl.bjypc.covid.utils.Scrypt;
 import org.springframework.beans.factory.annotation.Autowired;

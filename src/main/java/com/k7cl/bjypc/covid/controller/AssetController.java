@@ -1,8 +1,8 @@
 package com.k7cl.bjypc.covid.controller;
 
-import com.k7cl.bjypc.covid.bean.Asset;
-import com.k7cl.bjypc.covid.entity.AssetEdit;
-import com.k7cl.bjypc.covid.entity.Response;
+import com.k7cl.bjypc.covid.entity.Asset;
+import com.k7cl.bjypc.covid.pojo.AssetEdit;
+import com.k7cl.bjypc.covid.pojo.Response;
 import com.k7cl.bjypc.covid.service.impl.AssetService;
 import com.k7cl.bjypc.covid.service.impl.ClassesService;
 import com.k7cl.bjypc.covid.service.impl.UserService;

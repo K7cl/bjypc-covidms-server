@@ -1,6 +1,6 @@
 package com.k7cl.bjypc.covid.service.impl;
 
-import com.k7cl.bjypc.covid.bean.Classes;
+import com.k7cl.bjypc.covid.entity.Classes;
 import com.k7cl.bjypc.covid.service.ClassesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

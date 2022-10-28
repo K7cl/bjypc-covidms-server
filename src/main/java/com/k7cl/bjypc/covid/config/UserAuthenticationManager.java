@@ -1,6 +1,7 @@
-package com.k7cl.bjypc.covid;
+package com.k7cl.bjypc.covid.config;
 
-import com.k7cl.bjypc.covid.entity.SessionUser;
+import com.k7cl.bjypc.covid.pojo.AuthenticationToken;
+import com.k7cl.bjypc.covid.pojo.SessionUser;
 import com.k7cl.bjypc.covid.service.impl.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

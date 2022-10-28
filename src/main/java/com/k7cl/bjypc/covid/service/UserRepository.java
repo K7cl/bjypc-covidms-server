@@ -1,7 +1,7 @@
 package com.k7cl.bjypc.covid.service;
 
-import com.k7cl.bjypc.covid.bean.Classes;
-import com.k7cl.bjypc.covid.bean.User;
+import com.k7cl.bjypc.covid.entity.Classes;
+import com.k7cl.bjypc.covid.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

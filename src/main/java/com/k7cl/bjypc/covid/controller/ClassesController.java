@@ -1,8 +1,8 @@
 package com.k7cl.bjypc.covid.controller;
 
-import com.k7cl.bjypc.covid.bean.Classes;
-import com.k7cl.bjypc.covid.entity.ClassEdit;
-import com.k7cl.bjypc.covid.entity.Response;
+import com.k7cl.bjypc.covid.entity.Classes;
+import com.k7cl.bjypc.covid.pojo.ClassEdit;
+import com.k7cl.bjypc.covid.pojo.Response;
 import com.k7cl.bjypc.covid.service.impl.ClassesService;
 import com.k7cl.bjypc.covid.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

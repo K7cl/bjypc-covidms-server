@@ -1,4 +1,4 @@
-package com.k7cl.bjypc.covid.bean;
+package com.k7cl.bjypc.covid.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

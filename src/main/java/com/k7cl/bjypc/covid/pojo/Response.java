@@ -1,4 +1,4 @@
-package com.k7cl.bjypc.covid.entity;
+package com.k7cl.bjypc.covid.pojo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
